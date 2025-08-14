@@ -1,0 +1,1029 @@
+
+
+C:\Users\ch\Documents\FORTUNA X MA\TRANSFORMER TRAINING\mvts_transformer>python src/main.py --config config/meme_coin_regression.json --output_dir experiments/meme_coin_regression --comment "Fixed implementation" --name meme_coin_fixed --records_file meme_coin_regression.xls --task regression --key_metric loss
+2025-08-14 22:03:10,668 | INFO : Loading packages ...
+2025-08-14 22:03:12,511 | INFO : NumExpr defaulting to 12 threads.
+2025-08-14 22:03:13,497 | INFO : Reading configuration ...
+2025-08-14 22:03:13,499 | INFO : Stored configuration file in 'experiments/meme_coin_regression\meme_coin_fixed_2025-08-14_22-03-13_RHx'
+2025-08-14 22:03:13,499 | INFO : Running:
+src/main.py --config config/meme_coin_regression.json --output_dir experiments/meme_coin_regression --comment Fixed implementation --name meme_coin_fixed --records_file meme_coin_regression.xls --task regression --key_metric loss
+
+2025-08-14 22:03:13,500 | INFO : Using device: cpu
+2025-08-14 22:03:13,500 | INFO : Loading and preprocessing data ...
+2025-08-14 22:03:13,500 | INFO : Loading 3 files using 3 processes...
+2025-08-14 22:03:13,562 | INFO : Loading packages ...
+2025-08-14 22:03:13,563 | INFO : Loading packages ...
+2025-08-14 22:03:13,567 | INFO : Loading packages ...
+2025-08-14 22:03:15,371 | INFO : NumExpr defaulting to 12 threads.
+2025-08-14 22:03:15,371 | INFO : NumExpr defaulting to 12 threads.
+2025-08-14 22:03:15,372 | INFO : NumExpr defaulting to 12 threads.
+2025-08-14 22:03:25,269 | INFO : 7088 samples may be used for training
+2025-08-14 22:03:25,269 | INFO : 1772 samples will be used for validation
+2025-08-14 22:03:25,272 | INFO : 0 samples will be used for testing
+2025-08-14 22:03:28,000 | INFO : Creating model ...
+2025-08-14 22:03:28,011 | INFO : Model:
+TSTransformerEncoderClassiregressor(
+  (project_inp): Linear(in_features=56, out_features=256, bias=True)
+  (pos_enc): LearnablePositionalEncoding(
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+  (transformer_encoder): TransformerEncoder(
+    (layers): ModuleList(
+      (0): TransformerBatchNormEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=1024, bias=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+        (linear2): Linear(in_features=1024, out_features=256, bias=True)
+        (norm1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (norm2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout1): Dropout(p=0.2, inplace=False)
+        (dropout2): Dropout(p=0.2, inplace=False)
+      )
+      (1): TransformerBatchNormEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=1024, bias=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+        (linear2): Linear(in_features=1024, out_features=256, bias=True)
+        (norm1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (norm2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout1): Dropout(p=0.2, inplace=False)
+        (dropout2): Dropout(p=0.2, inplace=False)
+      )
+      (2): TransformerBatchNormEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=1024, bias=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+        (linear2): Linear(in_features=1024, out_features=256, bias=True)
+        (norm1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (norm2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout1): Dropout(p=0.2, inplace=False)
+        (dropout2): Dropout(p=0.2, inplace=False)
+      )
+      (3): TransformerBatchNormEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=1024, bias=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+        (linear2): Linear(in_features=1024, out_features=256, bias=True)
+        (norm1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (norm2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout1): Dropout(p=0.2, inplace=False)
+        (dropout2): Dropout(p=0.2, inplace=False)
+      )
+    )
+  )
+  (dropout1): Dropout(p=0.2, inplace=False)
+  (output_layer): Linear(in_features=32768, out_features=1, bias=True)
+)
+2025-08-14 22:03:28,012 | INFO : Total number of parameters: 3239169
+2025-08-14 22:03:28,013 | INFO : Trainable parameters: 3239169
+2025-08-14 22:03:30,447 | INFO : Evaluating on validation set ...
+C:\Users\ch\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\modules\loss.py:536: UserWarning: Using a target size (torch.Size([32, 128, 1])) that is different to the input size (torch.Size([32, 1])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.mse_loss(input, target, reduction=self.reduction)
+Traceback (most recent call last):
+  File "C:\Users\ch\Documents\FORTUNA X MA\TRANSFORMER TRAINING\mvts_transformer\src\main.py", line 307, in <module>
+    main(config)
+  File "C:\Users\ch\Documents\FORTUNA X MA\TRANSFORMER TRAINING\mvts_transformer\src\main.py", line 235, in main
+    aggr_metrics_val, best_metrics, best_value = validate(val_evaluator, tensorboard_writer, config, best_metrics,
+  File "C:\Users\ch\Documents\FORTUNA X MA\TRANSFORMER TRAINING\mvts_transformer\src\running.py", line 195, in validate
+    aggr_metrics, per_batch = val_evaluator.evaluate(epoch, keep_all=True)
+  File "C:\Users\ch\Documents\FORTUNA X MA\TRANSFORMER TRAINING\mvts_transformer\src\running.py", line 457, in evaluate
+    loss = self.loss_module(predictions, targets)  # (batch_size,) loss for each sample in the batch
+  File "C:\Users\ch\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\modules\module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\Users\ch\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\modules\loss.py", line 536, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "C:\Users\ch\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\functional.py", line 3291, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "C:\Users\ch\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\functional.py", line 74, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (128) at non-singleton dimension 1
+
+C:\Users\ch\Documents\FORTUNA X MA\TRANSFORMER TRAINING\mvts_transformer>python src/main.py --config config/meme_coin_regression.json --output_dir experiments/meme_coin_regression --comment "Fixed implementation" --name meme_coin_fixed --records_file meme_coin_regression.xls --task regression --key_metric loss
+2025-08-14 22:21:42,509 | INFO : Loading packages ...
+2025-08-14 22:21:44,340 | INFO : NumExpr defaulting to 12 threads.
+2025-08-14 22:21:45,340 | INFO : Reading configuration ...
+2025-08-14 22:21:45,348 | INFO : Stored configuration file in 'experiments/meme_coin_regression\meme_coin_fixed_2025-08-14_22-21-45_X8A'
+2025-08-14 22:21:45,348 | INFO : Running:
+src/main.py --config config/meme_coin_regression.json --output_dir experiments/meme_coin_regression --comment Fixed implementation --name meme_coin_fixed --records_file meme_coin_regression.xls --task regression --key_metric loss
+
+2025-08-14 22:21:45,349 | INFO : Using device: cpu
+2025-08-14 22:21:45,349 | INFO : Loading and preprocessing data ...
+2025-08-14 22:21:45,349 | INFO : Loading 3 files using 3 processes...
+2025-08-14 22:21:45,416 | INFO : Loading packages ...
+2025-08-14 22:21:45,420 | INFO : Loading packages ...
+2025-08-14 22:21:45,421 | INFO : Loading packages ...
+2025-08-14 22:21:47,464 | INFO : NumExpr defaulting to 12 threads.
+2025-08-14 22:21:47,464 | INFO : NumExpr defaulting to 12 threads.
+2025-08-14 22:21:47,470 | INFO : NumExpr defaulting to 12 threads.
+2025-08-14 22:24:19,051 | INFO : 7088 samples may be used for training
+2025-08-14 22:24:19,051 | INFO : 1772 samples will be used for validation
+2025-08-14 22:24:19,063 | INFO : 0 samples will be used for testing
+2025-08-14 22:24:22,236 | INFO : Creating model ...
+2025-08-14 22:24:22,250 | INFO : Model:
+TSTransformerEncoderClassiregressor(
+  (project_inp): Linear(in_features=56, out_features=256, bias=True)
+  (pos_enc): LearnablePositionalEncoding(
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+  (transformer_encoder): TransformerEncoder(
+    (layers): ModuleList(
+      (0): TransformerBatchNormEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=1024, bias=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+        (linear2): Linear(in_features=1024, out_features=256, bias=True)
+        (norm1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (norm2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout1): Dropout(p=0.2, inplace=False)
+        (dropout2): Dropout(p=0.2, inplace=False)
+      )
+      (1): TransformerBatchNormEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=1024, bias=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+        (linear2): Linear(in_features=1024, out_features=256, bias=True)
+        (norm1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (norm2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout1): Dropout(p=0.2, inplace=False)
+        (dropout2): Dropout(p=0.2, inplace=False)
+      )
+      (2): TransformerBatchNormEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=1024, bias=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+        (linear2): Linear(in_features=1024, out_features=256, bias=True)
+        (norm1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (norm2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout1): Dropout(p=0.2, inplace=False)
+        (dropout2): Dropout(p=0.2, inplace=False)
+      )
+      (3): TransformerBatchNormEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=1024, bias=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+        (linear2): Linear(in_features=1024, out_features=256, bias=True)
+        (norm1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (norm2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout1): Dropout(p=0.2, inplace=False)
+        (dropout2): Dropout(p=0.2, inplace=False)
+      )
+    )
+  )
+  (dropout1): Dropout(p=0.2, inplace=False)
+  (output_layer): Linear(in_features=32768, out_features=1, bias=True)
+)
+2025-08-14 22:24:22,251 | INFO : Total number of parameters: 3239169
+2025-08-14 22:24:22,252 | INFO : Trainable parameters: 3239169
+2025-08-14 22:24:24,728 | INFO : Evaluating on validation set ...
+Evaluating Epoch 0   0.0% | batch:         0 of        56       |       loss: 234.108
+Evaluating Epoch 0   1.8% | batch:         1 of        56       |       loss: 162.525
+Evaluating Epoch 0   3.6% | batch:         2 of        56       |       loss: 399.254
+Evaluating Epoch 0   5.4% | batch:         3 of        56       |       loss: 210.358
+Evaluating Epoch 0   7.1% | batch:         4 of        56       |       loss: 166.17
+Evaluating Epoch 0   8.9% | batch:         5 of        56       |       loss: 443.156
+Evaluating Epoch 0  10.7% | batch:         6 of        56       |       loss: 265.402
+Evaluating Epoch 0  12.5% | batch:         7 of        56       |       loss: 219.803
+Evaluating Epoch 0  14.3% | batch:         8 of        56       |       loss: 107.211
+Evaluating Epoch 0  16.1% | batch:         9 of        56       |       loss: 217.225
+Evaluating Epoch 0  17.9% | batch:        10 of        56       |       loss: 257.956
+Evaluating Epoch 0  19.6% | batch:        11 of        56       |       loss: 150.819
+Evaluating Epoch 0  21.4% | batch:        12 of        56       |       loss: 153.245
+Evaluating Epoch 0  23.2% | batch:        13 of        56       |       loss: 544.222
+Evaluating Epoch 0  25.0% | batch:        14 of        56       |       loss: 547.294
+Evaluating Epoch 0  26.8% | batch:        15 of        56       |       loss: 553.99
+Evaluating Epoch 0  28.6% | batch:        16 of        56       |       loss: 243.069
+Evaluating Epoch 0  30.4% | batch:        17 of        56       |       loss: 185.136
+Evaluating Epoch 0  32.1% | batch:        18 of        56       |       loss: 163.438
+Evaluating Epoch 0  33.9% | batch:        19 of        56       |       loss: 154.17
+Evaluating Epoch 0  35.7% | batch:        20 of        56       |       loss: 115.385
+Evaluating Epoch 0  37.5% | batch:        21 of        56       |       loss: 251.253
+Evaluating Epoch 0  39.3% | batch:        22 of        56       |       loss: 781.366
+Evaluating Epoch 0  41.1% | batch:        23 of        56       |       loss: 1175.27
+Evaluating Epoch 0  42.9% | batch:        24 of        56       |       loss: 91.3905
+Evaluating Epoch 0  44.6% | batch:        25 of        56       |       loss: 121.521
+Evaluating Epoch 0  46.4% | batch:        26 of        56       |       loss: 269.79
+Evaluating Epoch 0  48.2% | batch:        27 of        56       |       loss: 245.868
+Evaluating Epoch 0  50.0% | batch:        28 of        56       |       loss: 488.002
+Evaluating Epoch 0  51.8% | batch:        29 of        56       |       loss: 1355.98
+Evaluating Epoch 0  53.6% | batch:        30 of        56       |       loss: 208.562
+Evaluating Epoch 0  55.4% | batch:        31 of        56       |       loss: 271.533
+Evaluating Epoch 0  57.1% | batch:        32 of        56       |       loss: 655.556
+Evaluating Epoch 0  58.9% | batch:        33 of        56       |       loss: 195.8
+Evaluating Epoch 0  60.7% | batch:        34 of        56       |       loss: 192.19
+Evaluating Epoch 0  62.5% | batch:        35 of        56       |       loss: 2499.78
+Evaluating Epoch 0  64.3% | batch:        36 of        56       |       loss: 213.874
+Evaluating Epoch 0  66.1% | batch:        37 of        56       |       loss: 864.609
+Evaluating Epoch 0  67.9% | batch:        38 of        56       |       loss: 154.558
+Evaluating Epoch 0  69.6% | batch:        39 of        56       |       loss: 176.428
+Evaluating Epoch 0  71.4% | batch:        40 of        56       |       loss: 153.681
+Evaluating Epoch 0  73.2% | batch:        41 of        56       |       loss: 169.532
+Evaluating Epoch 0  75.0% | batch:        42 of        56       |       loss: 165.913
+Evaluating Epoch 0  76.8% | batch:        43 of        56       |       loss: 315.704
+Evaluating Epoch 0  78.6% | batch:        44 of        56       |       loss: 185.042
+Evaluating Epoch 0  80.4% | batch:        45 of        56       |       loss: 169.9
+Evaluating Epoch 0  82.1% | batch:        46 of        56       |       loss: 4458.39
+Evaluating Epoch 0  83.9% | batch:        47 of        56       |       loss: 156.587
+Evaluating Epoch 0  85.7% | batch:        48 of        56       |       loss: 324.102
+Evaluating Epoch 0  87.5% | batch:        49 of        56       |       loss: 249.269
+Evaluating Epoch 0  89.3% | batch:        50 of        56       |       loss: 194.27
+Evaluating Epoch 0  91.1% | batch:        51 of        56       |       loss: 232.53
+Evaluating Epoch 0  92.9% | batch:        52 of        56       |       loss: 171.823
+Evaluating Epoch 0  94.6% | batch:        53 of        56       |       loss: 343.075
+Evaluating Epoch 0  96.4% | batch:        54 of        56       |       loss: 293.058
+Evaluating Epoch 0  98.2% | batch:        55 of        56       |       loss: 180.105
+2025-08-14 22:25:00,285 | INFO : Validation runtime: 0.0 hours, 0.0 minutes, 35.55643272399902 seconds
+
+2025-08-14 22:25:00,288 | INFO : Avg val. time: 0.0 hours, 0.0 minutes, 35.55643272399902 seconds
+2025-08-14 22:25:00,288 | INFO : Avg batch val. time: 0.6349362986428397 seconds
+2025-08-14 22:25:00,288 | INFO : Avg sample val. time: 0.02006570695485272 seconds
+
+2025-08-14 22:25:00,289 | INFO : Epoch 0 Validation Summary: epoch: 0.000000 | loss: 421.808980 |
+C:\Users\ch\AppData\Local\Programs\Python\Python310\lib\site-packages\numpy\lib\npyio.py:716: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  val = np.asanyarray(val)
+2025-08-14 22:25:00,310 | INFO : Starting training...
+Training Epoch:   0%|                                                                                                                                                                                                                                                                               | 0/200 [00:00<?, ?it/s]C:\Users\ch\Documents\FORTUNA X MA\TRANSFORMER TRAINING\mvts_transformer\src\optimizers.py:69: UserWarning: This overload of addcmul_ is deprecated:
+        addcmul_(Number value, Tensor tensor1, Tensor tensor2)
+Consider using one of the following signatures instead:
+        addcmul_(Tensor tensor1, Tensor tensor2, *, Number value) (Triggered internally at ..\torch\csrc\utils\python_arg_parser.cpp:1420.)
+  exp_avg_sq.mul_(beta2).addcmul_(1 - beta2, grad, grad)
+Training Epoch 1   0.0% | batch:         0 of       222 |       loss: 0.0421574
+Training Epoch 1   0.5% | batch:         1 of       222 |       loss: 0.0699473
+Training Epoch 1   0.9% | batch:         2 of       222 |       loss: 0.101022
+Training Epoch 1   1.4% | batch:         3 of       222 |       loss: 0.0435308
+Training Epoch 1   1.8% | batch:         4 of       222 |       loss: 0.24495
+Training Epoch 1   2.3% | batch:         5 of       222 |       loss: 0.254269
+Training Epoch 1   2.7% | batch:         6 of       222 |       loss: 0.228911
+Training Epoch 1   3.2% | batch:         7 of       222 |       loss: 0.257682
+Training Epoch 1   3.6% | batch:         8 of       222 |       loss: 0.117017
+Training Epoch 1   4.1% | batch:         9 of       222 |       loss: 0.136145
+Training Epoch 1   4.5% | batch:        10 of       222 |       loss: 0.0351464
+Training Epoch 1   5.0% | batch:        11 of       222 |       loss: 0.0711189
+Training Epoch 1   5.4% | batch:        12 of       222 |       loss: 0.208392
+Training Epoch 1   5.9% | batch:        13 of       222 |       loss: 0.0374116
+Training Epoch 1   6.3% | batch:        14 of       222 |       loss: 0.104832
+Training Epoch 1   6.8% | batch:        15 of       222 |       loss: 0.143545
+Training Epoch 1   7.2% | batch:        16 of       222 |       loss: 0.281933
+Training Epoch 1   7.7% | batch:        17 of       222 |       loss: 0.208032
+Training Epoch 1   8.1% | batch:        18 of       222 |       loss: 0.207331
+Training Epoch 1   8.6% | batch:        19 of       222 |       loss: 0.163191
+Training Epoch 1   9.0% | batch:        20 of       222 |       loss: 0.149214
+Training Epoch 1   9.5% | batch:        21 of       222 |       loss: 0.187969
+Training Epoch 1   9.9% | batch:        22 of       222 |       loss: 0.240036
+Training Epoch 1  10.4% | batch:        23 of       222 |       loss: 0.13322
+Training Epoch 1  10.8% | batch:        24 of       222 |       loss: 0.00385021
+Training Epoch 1  11.3% | batch:        25 of       222 |       loss: 0.110033
+Training Epoch 1  11.7% | batch:        26 of       222 |       loss: 0.459372
+Training Epoch 1  12.2% | batch:        27 of       222 |       loss: 0.222709
+Training Epoch 1  12.6% | batch:        28 of       222 |       loss: 0.091873
+Training Epoch 1  13.1% | batch:        29 of       222 |       loss: 0.0870003
+Training Epoch 1  13.5% | batch:        30 of       222 |       loss: 0.0232814
+Training Epoch 1  14.0% | batch:        31 of       222 |       loss: 0.215547
+Training Epoch 1  14.4% | batch:        32 of       222 |       loss: 0.0734247
+Training Epoch 1  14.9% | batch:        33 of       222 |       loss: 0.166256
+Training Epoch 1  15.3% | batch:        34 of       222 |       loss: 0.150635
+Training Epoch 1  15.8% | batch:        35 of       222 |       loss: 0.0701044
+Training Epoch 1  16.2% | batch:        36 of       222 |       loss: 0.149734
+Training Epoch 1  16.7% | batch:        37 of       222 |       loss: 0.0920033
+Training Epoch 1  17.1% | batch:        38 of       222 |       loss: 0.175162
+Training Epoch 1  17.6% | batch:        39 of       222 |       loss: 0.928383
+Training Epoch 1  18.0% | batch:        40 of       222 |       loss: 0.126397
+Training Epoch 1  18.5% | batch:        41 of       222 |       loss: 0.141954
+Training Epoch 1  18.9% | batch:        42 of       222 |       loss: 0.112786
+Training Epoch 1  19.4% | batch:        43 of       222 |       loss: 0.132354
+Training Epoch 1  19.8% | batch:        44 of       222 |       loss: 0.0215778
+Training Epoch 1  20.3% | batch:        45 of       222 |       loss: 0.0348717
+Training Epoch 1  20.7% | batch:        46 of       222 |       loss: 0.072277
+Training Epoch 1  21.2% | batch:        47 of       222 |       loss: 0.0868897
+Training Epoch 1  21.6% | batch:        48 of       222 |       loss: 0.147965
+Training Epoch 1  22.1% | batch:        49 of       222 |       loss: 0.129896
+Training Epoch 1  22.5% | batch:        50 of       222 |       loss: 0.259896
+Training Epoch 1  23.0% | batch:        51 of       222 |       loss: 0.0720537
+Training Epoch 1  23.4% | batch:        52 of       222 |       loss: 0.126463
+Training Epoch 1  23.9% | batch:        53 of       222 |       loss: 0.428972
+Training Epoch 1  24.3% | batch:        54 of       222 |       loss: 0.100076
+Training Epoch 1  24.8% | batch:        55 of       222 |       loss: 0.0957031
+Training Epoch 1  25.2% | batch:        56 of       222 |       loss: 0.136375
+Training Epoch 1  25.7% | batch:        57 of       222 |       loss: 0.0784995
+Training Epoch 1  26.1% | batch:        58 of       222 |       loss: 0.0160487
+Training Epoch 1  26.6% | batch:        59 of       222 |       loss: 0.0881844
+Training Epoch 1  27.0% | batch:        60 of       222 |       loss: 0.0547511
+Training Epoch 1  27.5% | batch:        61 of       222 |       loss: 0.109877
+Training Epoch 1  27.9% | batch:        62 of       222 |       loss: 0.0652493
+Training Epoch 1  28.4% | batch:        63 of       222 |       loss: 0.0543834
+Training Epoch 1  28.8% | batch:        64 of       222 |       loss: 0.11445
+Training Epoch 1  29.3% | batch:        65 of       222 |       loss: 0.0841966
+Training Epoch 1  29.7% | batch:        66 of       222 |       loss: 0.14892
+Training Epoch 1  30.2% | batch:        67 of       222 |       loss: 0.0785611
+Training Epoch 1  30.6% | batch:        68 of       222 |       loss: 0.054903
+Training Epoch 1  31.1% | batch:        69 of       222 |       loss: 0.123096
+Training Epoch 1  31.5% | batch:        70 of       222 |       loss: 0.0287107
+Training Epoch 1  32.0% | batch:        71 of       222 |       loss: 0.302367
+Training Epoch 1  32.4% | batch:        72 of       222 |       loss: 0.228762
+Training Epoch 1  32.9% | batch:        73 of       222 |       loss: 0.079888
+Training Epoch 1  33.3% | batch:        74 of       222 |       loss: 0.044422
+Training Epoch 1  33.8% | batch:        75 of       222 |       loss: 0.247349
+Training Epoch 1  34.2% | batch:        76 of       222 |       loss: 0.218579
+Training Epoch 1  34.7% | batch:        77 of       222 |       loss: 0.0636167
+Training Epoch 1  35.1% | batch:        78 of       222 |       loss: 0.0844865
+Training Epoch 1  35.6% | batch:        79 of       222 |       loss: 0.222887
+Training Epoch 1  36.0% | batch:        80 of       222 |       loss: 0.0532864
+Training Epoch 1  36.5% | batch:        81 of       222 |       loss: 0.216649
+Training Epoch 1  36.9% | batch:        82 of       222 |       loss: 0.12483
+Training Epoch 1  37.4% | batch:        83 of       222 |       loss: 0.0472816
+Training Epoch 1  37.8% | batch:        84 of       222 |       loss: 0.16815
+Training Epoch 1  38.3% | batch:        85 of       222 |       loss: 0.331078
+Training Epoch 1  38.7% | batch:        86 of       222 |       loss: 0.244206
+Training Epoch 1  39.2% | batch:        87 of       222 |       loss: 0.101971
+Training Epoch 1  39.6% | batch:        88 of       222 |       loss: 0.0464662
+Training Epoch 1  40.1% | batch:        89 of       222 |       loss: 0.119198
+Training Epoch 1  40.5% | batch:        90 of       222 |       loss: 0.124783
+Training Epoch 1  41.0% | batch:        91 of       222 |       loss: 0.103373
+Training Epoch 1  41.4% | batch:        92 of       222 |       loss: 0.239549
+Training Epoch 1  41.9% | batch:        93 of       222 |       loss: 0.0940875
+Training Epoch 1  42.3% | batch:        94 of       222 |       loss: 0.281588
+Training Epoch 1  42.8% | batch:        95 of       222 |       loss: 0.0927984
+Training Epoch 1  43.2% | batch:        96 of       222 |       loss: 0.0713406
+Training Epoch 1  43.7% | batch:        97 of       222 |       loss: 0.125522
+Training Epoch 1  44.1% | batch:        98 of       222 |       loss: 0.0541889
+Training Epoch 1  44.6% | batch:        99 of       222 |       loss: 0.0799089
+Training Epoch 1  45.0% | batch:       100 of       222 |       loss: 0.117767
+Training Epoch 1  45.5% | batch:       101 of       222 |       loss: 0.0574392
+Training Epoch 1  45.9% | batch:       102 of       222 |       loss: 0.0855658
+Training Epoch 1  46.4% | batch:       103 of       222 |       loss: 0.136326
+Training Epoch 1  46.8% | batch:       104 of       222 |       loss: 0.0403691
+Training Epoch 1  47.3% | batch:       105 of       222 |       loss: 0.0451522
+Training Epoch 1  47.7% | batch:       106 of       222 |       loss: 0.0542146
+Training Epoch 1  48.2% | batch:       107 of       222 |       loss: 0.0502947
+Training Epoch 1  48.6% | batch:       108 of       222 |       loss: 0.0663318
+Training Epoch 1  49.1% | batch:       109 of       222 |       loss: 0.0413354
+Training Epoch 1  49.5% | batch:       110 of       222 |       loss: 0.131888
+Training Epoch 1  50.0% | batch:       111 of       222 |       loss: 0.090417
+Training Epoch 1  50.5% | batch:       112 of       222 |       loss: 0.0998133
+Training Epoch 1  50.9% | batch:       113 of       222 |       loss: 0.0659464
+Training Epoch 1  51.4% | batch:       114 of       222 |       loss: 0.101152
+Training Epoch 1  51.8% | batch:       115 of       222 |       loss: 0.183946
+Training Epoch 1  52.3% | batch:       116 of       222 |       loss: 0.202525
+Training Epoch 1  52.7% | batch:       117 of       222 |       loss: 0.0289281
+Training Epoch 1  53.2% | batch:       118 of       222 |       loss: 0.0489454
+Training Epoch 1  53.6% | batch:       119 of       222 |       loss: 0.185032
+Training Epoch 1  54.1% | batch:       120 of       222 |       loss: 0.132095
+Training Epoch 1  54.5% | batch:       121 of       222 |       loss: 0.170994
+Training Epoch 1  55.0% | batch:       122 of       222 |       loss: 0.0615013
+Training Epoch 1  55.4% | batch:       123 of       222 |       loss: 0.0698424
+Training Epoch 1  55.9% | batch:       124 of       222 |       loss: 0.0488422
+Training Epoch 1  56.3% | batch:       125 of       222 |       loss: 0.187622
+Training Epoch 1  56.8% | batch:       126 of       222 |       loss: 0.101617
+Training Epoch 1  57.2% | batch:       127 of       222 |       loss: 0.0374796
+Training Epoch 1  57.7% | batch:       128 of       222 |       loss: 0.164179
+Training Epoch 1  58.1% | batch:       129 of       222 |       loss: 0.0574476
+Training Epoch 1  58.6% | batch:       130 of       222 |       loss: 0.267491
+Training Epoch 1  59.0% | batch:       131 of       222 |       loss: 0.100334
+Training Epoch 1  59.5% | batch:       132 of       222 |       loss: 0.0650792
+Training Epoch 1  59.9% | batch:       133 of       222 |       loss: 0.118884
+Training Epoch 1  60.4% | batch:       134 of       222 |       loss: 0.123815
+Training Epoch 1  60.8% | batch:       135 of       222 |       loss: 0.060097
+Training Epoch 1  61.3% | batch:       136 of       222 |       loss: 0.0769826
+Training Epoch 1  61.7% | batch:       137 of       222 |       loss: 0.269622
+Training Epoch 1  62.2% | batch:       138 of       222 |       loss: 0.138209
+Training Epoch 1  62.6% | batch:       139 of       222 |       loss: 0.136687
+Training Epoch 1  63.1% | batch:       140 of       222 |       loss: 0.612542
+Training Epoch 1  63.5% | batch:       141 of       222 |       loss: 0.110083
+Training Epoch 1  64.0% | batch:       142 of       222 |       loss: 0.241027
+Training Epoch 1  64.4% | batch:       143 of       222 |       loss: 0.0954774
+Training Epoch 1  64.9% | batch:       144 of       222 |       loss: 0.193532
+Training Epoch 1  65.3% | batch:       145 of       222 |       loss: 0.247672
+Training Epoch 1  65.8% | batch:       146 of       222 |       loss: 0.111113
+Training Epoch 1  66.2% | batch:       147 of       222 |       loss: 0.125186
+Training Epoch 1  66.7% | batch:       148 of       222 |       loss: 0.128294
+Training Epoch 1  67.1% | batch:       149 of       222 |       loss: 0.0972858
+Training Epoch 1  67.6% | batch:       150 of       222 |       loss: 0.0417455
+Training Epoch 1  68.0% | batch:       151 of       222 |       loss: 0.235518
+Training Epoch 1  68.5% | batch:       152 of       222 |       loss: 0.0630161
+Training Epoch 1  68.9% | batch:       153 of       222 |       loss: 0.525365
+Training Epoch 1  69.4% | batch:       154 of       222 |       loss: 0.137963
+Training Epoch 1  69.8% | batch:       155 of       222 |       loss: 0.14814
+Training Epoch 1  70.3% | batch:       156 of       222 |       loss: 0.182509
+Training Epoch 1  70.7% | batch:       157 of       222 |       loss: 0.105331
+Training Epoch 1  71.2% | batch:       158 of       222 |       loss: 0.0450959
+Training Epoch 1  71.6% | batch:       159 of       222 |       loss: 0.123037
+Training Epoch 1  72.1% | batch:       160 of       222 |       loss: 0.128302
+Training Epoch 1  72.5% | batch:       161 of       222 |       loss: 0.225583
+Training Epoch 1  73.0% | batch:       162 of       222 |       loss: 0.211608
+Training Epoch 1  73.4% | batch:       163 of       222 |       loss: 0.0224599
+Training Epoch 1  73.9% | batch:       164 of       222 |       loss: 0.124734
+Training Epoch 1  74.3% | batch:       165 of       222 |       loss: 0.134653
+Training Epoch 1  74.8% | batch:       166 of       222 |       loss: 0.188806
+Training Epoch 1  75.2% | batch:       167 of       222 |       loss: 0.0794491
+Training Epoch 1  75.7% | batch:       168 of       222 |       loss: 0.0675629
+Training Epoch 1  76.1% | batch:       169 of       222 |       loss: 0.109041
+Training Epoch 1  76.6% | batch:       170 of       222 |       loss: 0.22034
+Training Epoch 1  77.0% | batch:       171 of       222 |       loss: 0.121723
+Training Epoch 1  77.5% | batch:       172 of       222 |       loss: 0.107146
+Training Epoch 1  77.9% | batch:       173 of       222 |       loss: 0.128583
+Training Epoch 1  78.4% | batch:       174 of       222 |       loss: 0.0570924
+Training Epoch 1  78.8% | batch:       175 of       222 |       loss: 0.122042
+Training Epoch 1  79.3% | batch:       176 of       222 |       loss: 0.0542824
+Training Epoch 1  79.7% | batch:       177 of       222 |       loss: 0.0672262
+Training Epoch 1  80.2% | batch:       178 of       222 |       loss: 0.34581
+Training Epoch 1  80.6% | batch:       179 of       222 |       loss: 0.177035
+Training Epoch 1  81.1% | batch:       180 of       222 |       loss: 0.108822
+Training Epoch 1  81.5% | batch:       181 of       222 |       loss: 0.144422
+Training Epoch 1  82.0% | batch:       182 of       222 |       loss: 0.0455342
+Training Epoch 1  82.4% | batch:       183 of       222 |       loss: 0.00930068
+Training Epoch 1  82.9% | batch:       184 of       222 |       loss: 0.107427
+Training Epoch 1  83.3% | batch:       185 of       222 |       loss: 0.135056
+Training Epoch 1  83.8% | batch:       186 of       222 |       loss: 0.102701
+Training Epoch 1  84.2% | batch:       187 of       222 |       loss: 0.121813
+Training Epoch 1  84.7% | batch:       188 of       222 |       loss: 0.0826121
+Training Epoch 1  85.1% | batch:       189 of       222 |       loss: 0.136653
+Training Epoch 1  85.6% | batch:       190 of       222 |       loss: 0.279994
+Training Epoch 1  86.0% | batch:       191 of       222 |       loss: 0.123132
+Training Epoch 1  86.5% | batch:       192 of       222 |       loss: 0.142323
+Training Epoch 1  86.9% | batch:       193 of       222 |       loss: 0.0789278
+Training Epoch 1  87.4% | batch:       194 of       222 |       loss: 0.0675352
+Training Epoch 1  87.8% | batch:       195 of       222 |       loss: 0.129201
+Training Epoch 1  88.3% | batch:       196 of       222 |       loss: 0.328565
+Training Epoch 1  88.7% | batch:       197 of       222 |       loss: 0.104484
+Training Epoch 1  89.2% | batch:       198 of       222 |       loss: 0.176302
+Training Epoch 1  89.6% | batch:       199 of       222 |       loss: 0.231996
+Training Epoch 1  90.1% | batch:       200 of       222 |       loss: 0.292765
+Training Epoch 1  90.5% | batch:       201 of       222 |       loss: 0.0521819
+Training Epoch 1  91.0% | batch:       202 of       222 |       loss: 0.0672042
+Training Epoch 1  91.4% | batch:       203 of       222 |       loss: 0.0658909
+Training Epoch 1  91.9% | batch:       204 of       222 |       loss: 0.0592899
+Training Epoch 1  92.3% | batch:       205 of       222 |       loss: 0.107085
+Training Epoch 1  92.8% | batch:       206 of       222 |       loss: 0.0431933
+Training Epoch 1  93.2% | batch:       207 of       222 |       loss: 0.188686
+Training Epoch 1  93.7% | batch:       208 of       222 |       loss: 0.0810815
+Training Epoch 1  94.1% | batch:       209 of       222 |       loss: 0.080379
+Training Epoch 1  94.6% | batch:       210 of       222 |       loss: 0.0537329
+Training Epoch 1  95.0% | batch:       211 of       222 |       loss: 0.0625831
+Training Epoch 1  95.5% | batch:       212 of       222 |       loss: 0.0934158
+Training Epoch 1  95.9% | batch:       213 of       222 |       loss: 0.0783165
+Training Epoch 1  96.4% | batch:       214 of       222 |       loss: 0.0878645
+Training Epoch 1  96.8% | batch:       215 of       222 |       loss: 0.191001
+Training Epoch 1  97.3% | batch:       216 of       222 |       loss: 0.113771
+Training Epoch 1  97.7% | batch:       217 of       222 |       loss: 0.0874695
+Training Epoch 1  98.2% | batch:       218 of       222 |       loss: 0.0944562
+Training Epoch 1  98.6% | batch:       219 of       222 |       loss: 0.095374
+Training Epoch 1  99.1% | batch:       220 of       222 |       loss: 0.124296
+Training Epoch 1  99.5% | batch:       221 of       222 |       loss: 0.118001
+
+2025-08-14 22:34:49,458 | INFO : Epoch 1 Training Summary: epoch: 1.000000 | loss: 0.133394 |
+2025-08-14 22:34:49,459 | INFO : Epoch runtime: 0.0 hours, 9.0 minutes, 49.143930196762085 seconds
+
+2025-08-14 22:34:49,459 | INFO : Avg epoch train. time: 0.0 hours, 9.0 minutes, 49.143930196762085 seconds
+2025-08-14 22:34:49,459 | INFO : Avg batch train. time: 2.653801487372802 seconds
+2025-08-14 22:34:49,459 | INFO : Avg sample train. time: 0.08311850030992693 seconds
+2025-08-14 22:34:49,459 | INFO : Evaluating on validation set ...
+Evaluating Epoch 1   0.0% | batch:         0 of        56       |       loss: 0.0262776
+Evaluating Epoch 1   1.8% | batch:         1 of        56       |       loss: 0.0184927
+Evaluating Epoch 1   3.6% | batch:         2 of        56       |       loss: 0.0764877
+Evaluating Epoch 1   5.4% | batch:         3 of        56       |       loss: 0.0124565
+Evaluating Epoch 1   7.1% | batch:         4 of        56       |       loss: 0.0475279
+Evaluating Epoch 1   8.9% | batch:         5 of        56       |       loss: 0.0108986
+Evaluating Epoch 1  10.7% | batch:         6 of        56       |       loss: 0.0180505
+Evaluating Epoch 1  12.5% | batch:         7 of        56       |       loss: 0.0194844
+Evaluating Epoch 1  14.3% | batch:         8 of        56       |       loss: 0.0131517
+Evaluating Epoch 1  16.1% | batch:         9 of        56       |       loss: 0.0451847
+Evaluating Epoch 1  17.9% | batch:        10 of        56       |       loss: 0.00963296
+Evaluating Epoch 1  19.6% | batch:        11 of        56       |       loss: 0.00796684
+Evaluating Epoch 1  21.4% | batch:        12 of        56       |       loss: 0.00608014
+Evaluating Epoch 1  23.2% | batch:        13 of        56       |       loss: 0.0628621
+Evaluating Epoch 1  25.0% | batch:        14 of        56       |       loss: 0.217408
+Evaluating Epoch 1  26.8% | batch:        15 of        56       |       loss: 0.0199382
+Evaluating Epoch 1  28.6% | batch:        16 of        56       |       loss: 0.118631
+Evaluating Epoch 1  30.4% | batch:        17 of        56       |       loss: 0.0109624
+Evaluating Epoch 1  32.1% | batch:        18 of        56       |       loss: 0.00618758
+Evaluating Epoch 1  33.9% | batch:        19 of        56       |       loss: 0.0240397
+Evaluating Epoch 1  35.7% | batch:        20 of        56       |       loss: 0.00660049
+Evaluating Epoch 1  37.5% | batch:        21 of        56       |       loss: 0.00761491
+Evaluating Epoch 1  39.3% | batch:        22 of        56       |       loss: 0.120579
+Evaluating Epoch 1  41.1% | batch:        23 of        56       |       loss: 0.33269
+Evaluating Epoch 1  42.9% | batch:        24 of        56       |       loss: 0.00386242
+Evaluating Epoch 1  44.6% | batch:        25 of        56       |       loss: 0.00984348
+Evaluating Epoch 1  46.4% | batch:        26 of        56       |       loss: 0.039662
+Evaluating Epoch 1  48.2% | batch:        27 of        56       |       loss: 0.0137746
+Evaluating Epoch 1  50.0% | batch:        28 of        56       |       loss: 0.0587946
+Evaluating Epoch 1  51.8% | batch:        29 of        56       |       loss: 0.177404
+Evaluating Epoch 1  53.6% | batch:        30 of        56       |       loss: 0.0103285
+Evaluating Epoch 1  55.4% | batch:        31 of        56       |       loss: 0.0430262
+Evaluating Epoch 1  57.1% | batch:        32 of        56       |       loss: 0.0262538
+Evaluating Epoch 1  58.9% | batch:        33 of        56       |       loss: 0.00932005
+Evaluating Epoch 1  60.7% | batch:        34 of        56       |       loss: 0.00513968
+Evaluating Epoch 1  62.5% | batch:        35 of        56       |       loss: 0.197339
+Evaluating Epoch 1  64.3% | batch:        36 of        56       |       loss: 0.0408553
+Evaluating Epoch 1  66.1% | batch:        37 of        56       |       loss: 0.314185
+Evaluating Epoch 1  67.9% | batch:        38 of        56       |       loss: 0.041666
+Evaluating Epoch 1  69.6% | batch:        39 of        56       |       loss: 0.153491
+Evaluating Epoch 1  71.4% | batch:        40 of        56       |       loss: 0.0218332
+Evaluating Epoch 1  73.2% | batch:        41 of        56       |       loss: 0.00714685
+Evaluating Epoch 1  75.0% | batch:        42 of        56       |       loss: 0.0126963
+Evaluating Epoch 1  76.8% | batch:        43 of        56       |       loss: 0.010645
+Evaluating Epoch 1  78.6% | batch:        44 of        56       |       loss: 0.00619921
+Evaluating Epoch 1  80.4% | batch:        45 of        56       |       loss: 0.00188308
+Evaluating Epoch 1  82.1% | batch:        46 of        56       |       loss: 0.681834
+Evaluating Epoch 1  83.9% | batch:        47 of        56       |       loss: 0.0204471
+Evaluating Epoch 1  85.7% | batch:        48 of        56       |       loss: 0.0090701
+Evaluating Epoch 1  87.5% | batch:        49 of        56       |       loss: 0.025714
+Evaluating Epoch 1  89.3% | batch:        50 of        56       |       loss: 0.00679383
+Evaluating Epoch 1  91.1% | batch:        51 of        56       |       loss: 0.0110442
+Evaluating Epoch 1  92.9% | batch:        52 of        56       |       loss: 0.00982528
+Evaluating Epoch 1  94.6% | batch:        53 of        56       |       loss: 0.0118647
+Evaluating Epoch 1  96.4% | batch:        54 of        56       |       loss: 0.0137326
+Evaluating Epoch 1  98.2% | batch:        55 of        56       |       loss: 0.00478593
+2025-08-14 22:35:22,334 | INFO : Validation runtime: 0.0 hours, 0.0 minutes, 32.87525725364685 seconds
+
+2025-08-14 22:35:22,336 | INFO : Avg val. time: 0.0 hours, 0.0 minutes, 34.21584498882294 seconds
+2025-08-14 22:35:22,336 | INFO : Avg batch val. time: 0.6109972319432667 seconds
+2025-08-14 22:35:22,336 | INFO : Avg sample val. time: 0.019309167600915878 seconds
+
+2025-08-14 22:35:22,336 | INFO : Epoch 1 Validation Summary: epoch: 1.000000 | loss: 0.058450 |
+Training Epoch:   0%|█▎                                                                                                                                                                                                                                                                 | 1/200 [10:22<34:23:12, 622.07s/it]Training Epoch 2   0.0% | batch:         0 of       222  |       loss: 0.0315458
+Training Epoch 2   0.5% | batch:         1 of       222 |       loss: 0.115765
+Training Epoch 2   0.9% | batch:         2 of       222 |       loss: 0.114075
+Training Epoch 2   1.4% | batch:         3 of       222 |       loss: 0.0203674
+Training Epoch 2   1.8% | batch:         4 of       222 |       loss: 0.058308
+Training Epoch 2   2.3% | batch:         5 of       222 |       loss: 0.138852
+Training Epoch 2   2.7% | batch:         6 of       222 |       loss: 0.0439123
+Training Epoch 2   3.2% | batch:         7 of       222 |       loss: 0.142969
+Training Epoch 2   3.6% | batch:         8 of       222 |       loss: 0.0404934
+Training Epoch 2   4.1% | batch:         9 of       222 |       loss: 0.0365178
+Training Epoch 2   4.5% | batch:        10 of       222 |       loss: 0.0267408
+Training Epoch 2   5.0% | batch:        11 of       222 |       loss: 0.0249673
+Training Epoch 2   5.4% | batch:        12 of       222 |       loss: 0.25155
+Training Epoch 2   5.9% | batch:        13 of       222 |       loss: 0.214198
+Training Epoch 2   6.3% | batch:        14 of       222 |       loss: 0.0642391
+Training Epoch 2   6.8% | batch:        15 of       222 |       loss: 0.0761294
+Training Epoch 2   7.2% | batch:        16 of       222 |       loss: 0.0521158
+Training Epoch 2   7.7% | batch:        17 of       222 |       loss: 0.0690473
+Training Epoch 2   8.1% | batch:        18 of       222 |       loss: 0.108259
+Training Epoch 2   8.6% | batch:        19 of       222 |       loss: 0.146869
+Training Epoch 2   9.0% | batch:        20 of       222 |       loss: 0.134442
+Training Epoch 2   9.5% | batch:        21 of       222 |       loss: 0.0621519
+Training Epoch 2   9.9% | batch:        22 of       222 |       loss: 0.216208
+Training Epoch 2  10.4% | batch:        23 of       222 |       loss: 0.0718767
+Training Epoch 2  10.8% | batch:        24 of       222 |       loss: 0.0887691
+Training Epoch 2  11.3% | batch:        25 of       222 |       loss: 0.107948
+Training Epoch 2  11.7% | batch:        26 of       222 |       loss: 0.0353157
+Training Epoch 2  12.2% | batch:        27 of       222 |       loss: 0.0709418
+Training Epoch 2  12.6% | batch:        28 of       222 |       loss: 0.0513877
+Training Epoch 2  13.1% | batch:        29 of       222 |       loss: 0.0772302
+Training Epoch 2  13.5% | batch:        30 of       222 |       loss: 0.0717222
+Training Epoch 2  14.0% | batch:        31 of       222 |       loss: 0.194642
+Training Epoch 2  14.4% | batch:        32 of       222 |       loss: 0.0975244
+Training Epoch 2  14.9% | batch:        33 of       222 |       loss: 0.126515
+Training Epoch 2  15.3% | batch:        34 of       222 |       loss: 0.0607477
+Training Epoch 2  15.8% | batch:        35 of       222 |       loss: 0.348431
+Training Epoch 2  16.2% | batch:        36 of       222 |       loss: 0.0743848
+Training Epoch 2  16.7% | batch:        37 of       222 |       loss: 0.118132
+Training Epoch 2  17.1% | batch:        38 of       222 |       loss: 0.106599
+Training Epoch 2  17.6% | batch:        39 of       222 |       loss: 0.0608826
+Training Epoch 2  18.0% | batch:        40 of       222 |       loss: 0.0960916
+Training Epoch 2  18.5% | batch:        41 of       222 |       loss: 0.110017
+Training Epoch 2  18.9% | batch:        42 of       222 |       loss: 0.309661
+Training Epoch 2  19.4% | batch:        43 of       222 |       loss: 0.0983491
+Training Epoch 2  19.8% | batch:        44 of       222 |       loss: 0.067704
+Training Epoch 2  20.3% | batch:        45 of       222 |       loss: 0.285839
+Training Epoch 2  20.7% | batch:        46 of       222 |       loss: 0.0832746
+Training Epoch 2  21.2% | batch:        47 of       222 |       loss: 0.0693642
+Training Epoch 2  21.6% | batch:        48 of       222 |       loss: 0.164748
+Training Epoch 2  22.1% | batch:        49 of       222 |       loss: 0.0978417
+Training Epoch 2  22.5% | batch:        50 of       222 |       loss: 0.107061
+Training Epoch 2  23.0% | batch:        51 of       222 |       loss: 0.067294
+Training Epoch 2  23.4% | batch:        52 of       222 |       loss: 0.126487
+Training Epoch 2  23.9% | batch:        53 of       222 |       loss: 0.227993
+Training Epoch 2  24.3% | batch:        54 of       222 |       loss: 0.166429
+Training Epoch 2  24.8% | batch:        55 of       222 |       loss: 0.133402
+Training Epoch 2  25.2% | batch:        56 of       222 |       loss: 0.054684
+Training Epoch 2  25.7% | batch:        57 of       222 |       loss: 0.0886985
+Training Epoch 2  26.1% | batch:        58 of       222 |       loss: 0.0447034
+Training Epoch 2  26.6% | batch:        59 of       222 |       loss: 0.12782
+Training Epoch 2  27.0% | batch:        60 of       222 |       loss: 0.0971369
+Training Epoch 2  27.5% | batch:        61 of       222 |       loss: 0.128094
+Training Epoch 2  27.9% | batch:        62 of       222 |       loss: 0.431086
+Training Epoch 2  28.4% | batch:        63 of       222 |       loss: 0.121999
+Training Epoch 2  28.8% | batch:        64 of       222 |       loss: 0.14514
+Training Epoch 2  29.3% | batch:        65 of       222 |       loss: 0.118662
+Training Epoch 2  29.7% | batch:        66 of       222 |       loss: 0.0978428
+Training Epoch 2  30.2% | batch:        67 of       222 |       loss: 0.103322
+Training Epoch 2  30.6% | batch:        68 of       222 |       loss: 0.067813
+Training Epoch 2  31.1% | batch:        69 of       222 |       loss: 0.148449
+Training Epoch 2  31.5% | batch:        70 of       222 |       loss: 0.110171
+Training Epoch 2  32.0% | batch:        71 of       222 |       loss: 0.0939336
+Training Epoch 2  32.4% | batch:        72 of       222 |       loss: 0.746522
+Training Epoch 2  32.9% | batch:        73 of       222 |       loss: 0.131277
+Training Epoch 2  33.3% | batch:        74 of       222 |       loss: 0.0686322
+Training Epoch 2  33.8% | batch:        75 of       222 |       loss: 0.44734
+Training Epoch 2  34.2% | batch:        76 of       222 |       loss: 0.1354
+Training Epoch 2  34.7% | batch:        77 of       222 |       loss: 0.0620599
+Training Epoch 2  35.1% | batch:        78 of       222 |       loss: 0.0573044
+Training Epoch 2  35.6% | batch:        79 of       222 |       loss: 0.172897
+Training Epoch 2  36.0% | batch:        80 of       222 |       loss: 0.194309
+Training Epoch 2  36.5% | batch:        81 of       222 |       loss: 0.0581837
+Training Epoch 2  36.9% | batch:        82 of       222 |       loss: 0.175783
+Training Epoch 2  37.4% | batch:        83 of       222 |       loss: 0.0227112
+Training Epoch 2  37.8% | batch:        84 of       222 |       loss: 0.0758713
+Training Epoch 2  38.3% | batch:        85 of       222 |       loss: 0.0978925
+Training Epoch 2  38.7% | batch:        86 of       222 |       loss: 0.124916
+Training Epoch 2  39.2% | batch:        87 of       222 |       loss: 0.0676489
+Training Epoch 2  39.6% | batch:        88 of       222 |       loss: 0.109536
+Training Epoch 2  40.1% | batch:        89 of       222 |       loss: 0.0758353
+Training Epoch 2  40.5% | batch:        90 of       222 |       loss: 0.066136
+Training Epoch 2  41.0% | batch:        91 of       222 |       loss: 0.135856
+Training Epoch 2  41.4% | batch:        92 of       222 |       loss: 0.306076
+Training Epoch 2  41.9% | batch:        93 of       222 |       loss: 0.0886979
+Training Epoch 2  42.3% | batch:        94 of       222 |       loss: 0.0426772
+Training Epoch 2  42.8% | batch:        95 of       222 |       loss: 0.093223
+Training Epoch 2  43.2% | batch:        96 of       222 |       loss: 0.0895812
+Training Epoch 2  43.7% | batch:        97 of       222 |       loss: 0.0861046
+Training Epoch 2  44.1% | batch:        98 of       222 |       loss: 0.100194
+Training Epoch 2  44.6% | batch:        99 of       222 |       loss: 0.434489
+Training Epoch 2  45.0% | batch:       100 of       222 |       loss: 0.149151
+Training Epoch 2  45.5% | batch:       101 of       222 |       loss: 0.228254
+Training Epoch 2  45.9% | batch:       102 of       222 |       loss: 0.0656495
+Training Epoch 2  46.4% | batch:       103 of       222 |       loss: 0.083327
+Training Epoch 2  46.8% | batch:       104 of       222 |       loss: 0.0943803
+Training Epoch 2  47.3% | batch:       105 of       222 |       loss: 0.0474758
+Training Epoch 2  47.7% | batch:       106 of       222 |       loss: 0.104338
+Training Epoch 2  48.2% | batch:       107 of       222 |       loss: 0.243913
+Training Epoch 2  48.6% | batch:       108 of       222 |       loss: 0.0736176
+Training Epoch 2  49.1% | batch:       109 of       222 |       loss: 0.148566
+Training Epoch 2  49.5% | batch:       110 of       222 |       loss: 0.0612467
+Training Epoch 2  50.0% | batch:       111 of       222 |       loss: 0.11891
+Training Epoch 2  50.5% | batch:       112 of       222 |       loss: 0.0390707
+Training Epoch 2  50.9% | batch:       113 of       222 |       loss: 0.218422
+Training Epoch 2  51.4% | batch:       114 of       222 |       loss: 0.27466
+Training Epoch 2  51.8% | batch:       115 of       222 |       loss: 0.0837524
+Training Epoch 2  52.3% | batch:       116 of       222 |       loss: 0.17118
+Training Epoch 2  52.7% | batch:       117 of       222 |       loss: 0.130138
+Training Epoch 2  53.2% | batch:       118 of       222 |       loss: 0.057142
+Training Epoch 2  53.6% | batch:       119 of       222 |       loss: 0.116434
+Training Epoch 2  54.1% | batch:       120 of       222 |       loss: 0.154916
+Training Epoch 2  54.5% | batch:       121 of       222 |       loss: 0.136298
+Training Epoch 2  55.0% | batch:       122 of       222 |       loss: 0.0957313
+Training Epoch 2  55.4% | batch:       123 of       222 |       loss: 0.11983
+Training Epoch 2  55.9% | batch:       124 of       222 |       loss: 0.120463
+Training Epoch 2  56.3% | batch:       125 of       222 |       loss: 0.122319
+Training Epoch 2  56.8% | batch:       126 of       222 |       loss: 0.0611643
+Training Epoch 2  57.2% | batch:       127 of       222 |       loss: 0.0339061
+Training Epoch 2  57.7% | batch:       128 of       222 |       loss: 0.0662843
+Training Epoch 2  58.1% | batch:       129 of       222 |       loss: 0.0498982
+Training Epoch 2  58.6% | batch:       130 of       222 |       loss: 0.0639381
+Training Epoch 2  59.0% | batch:       131 of       222 |       loss: 0.0787981
+Training Epoch 2  59.5% | batch:       132 of       222 |       loss: 0.0735362
+Training Epoch 2  59.9% | batch:       133 of       222 |       loss: 0.136047
+Training Epoch 2  60.4% | batch:       134 of       222 |       loss: 0.109137
+Training Epoch 2  60.8% | batch:       135 of       222 |       loss: 0.0758565
+Training Epoch 2  61.3% | batch:       136 of       222 |       loss: 0.0827681
+Training Epoch 2  61.7% | batch:       137 of       222 |       loss: 0.0447567
+Training Epoch 2  62.2% | batch:       138 of       222 |       loss: 0.14635
+Training Epoch 2  62.6% | batch:       139 of       222 |       loss: 0.318227
+Training Epoch 2  63.1% | batch:       140 of       222 |       loss: 0.040116
+Training Epoch 2  63.5% | batch:       141 of       222 |       loss: 0.0434789
+Training Epoch 2  64.0% | batch:       142 of       222 |       loss: 0.218552
+Training Epoch 2  64.4% | batch:       143 of       222 |       loss: 0.261807
+Training Epoch 2  64.9% | batch:       144 of       222 |       loss: 0.0398172
+Training Epoch 2  65.3% | batch:       145 of       222 |       loss: 0.0591246
+Training Epoch 2  65.8% | batch:       146 of       222 |       loss: 0.0843291
+Training Epoch 2  66.2% | batch:       147 of       222 |       loss: 0.0542006
+Training Epoch 2  66.7% | batch:       148 of       222 |       loss: 0.154265
+Training Epoch 2  67.1% | batch:       149 of       222 |       loss: 0.0420645
+Training Epoch 2  67.6% | batch:       150 of       222 |       loss: 0.0780784
+Training Epoch 2  68.0% | batch:       151 of       222 |       loss: 0.973802
+Training Epoch 2  68.5% | batch:       152 of       222 |       loss: 0.10696
+Training Epoch 2  68.9% | batch:       153 of       222 |       loss: 0.0944533
+Training Epoch 2  69.4% | batch:       154 of       222 |       loss: 0.175915
+Training Epoch 2  69.8% | batch:       155 of       222 |       loss: 0.186712
+Training Epoch 2  70.3% | batch:       156 of       222 |       loss: 0.135558
+Training Epoch 2  70.7% | batch:       157 of       222 |       loss: 0.0948279
+Training Epoch 2  71.2% | batch:       158 of       222 |       loss: 0.0607542
+Training Epoch 2  71.6% | batch:       159 of       222 |       loss: 0.0761278
+Training Epoch 2  72.1% | batch:       160 of       222 |       loss: 0.0939712
+Training Epoch 2  72.5% | batch:       161 of       222 |       loss: 0.0577349
+Training Epoch 2  73.0% | batch:       162 of       222 |       loss: 0.0713353
+Training Epoch 2  73.4% | batch:       163 of       222 |       loss: 0.0457131
+Training Epoch 2  73.9% | batch:       164 of       222 |       loss: 0.0696985
+Training Epoch 2  74.3% | batch:       165 of       222 |       loss: 0.137249
+Training Epoch 2  74.8% | batch:       166 of       222 |       loss: 0.0336609
+Training Epoch 2  75.2% | batch:       167 of       222 |       loss: 0.194389
+Training Epoch 2  75.7% | batch:       168 of       222 |       loss: 0.0577856
+Training Epoch 2  76.1% | batch:       169 of       222 |       loss: 0.034516
+Training Epoch 2  76.6% | batch:       170 of       222 |       loss: 0.050997
+Training Epoch 2  77.0% | batch:       171 of       222 |       loss: 0.18937
+Training Epoch 2  77.5% | batch:       172 of       222 |       loss: 0.0731212
+Training Epoch 2  77.9% | batch:       173 of       222 |       loss: 0.152715
+Training Epoch 2  78.4% | batch:       174 of       222 |       loss: 0.120817
+Training Epoch 2  78.8% | batch:       175 of       222 |       loss: 0.0603689
+Training Epoch 2  79.3% | batch:       176 of       222 |       loss: 0.195755
+Training Epoch 2  79.7% | batch:       177 of       222 |       loss: 0.0585412
+Training Epoch 2  80.2% | batch:       178 of       222 |       loss: 0.121741
+Training Epoch 2  80.6% | batch:       179 of       222 |       loss: 0.0674438
+Training Epoch 2  81.1% | batch:       180 of       222 |       loss: 0.0560082
+Training Epoch 2  81.5% | batch:       181 of       222 |       loss: 0.0404628
+Training Epoch 2  82.0% | batch:       182 of       222 |       loss: 0.0053215
+Training Epoch 2  82.4% | batch:       183 of       222 |       loss: 0.0808003
+Training Epoch 2  82.9% | batch:       184 of       222 |       loss: 0.0949341
+Training Epoch 2  83.3% | batch:       185 of       222 |       loss: 0.117096
+Training Epoch 2  83.8% | batch:       186 of       222 |       loss: 0.0596434
+Training Epoch 2  84.2% | batch:       187 of       222 |       loss: 0.240897
+Training Epoch 2  84.7% | batch:       188 of       222 |       loss: 0.119921
+Training Epoch 2  85.1% | batch:       189 of       222 |       loss: 0.019451
+Training Epoch 2  85.6% | batch:       190 of       222 |       loss: 0.0735283
+Training Epoch 2  86.0% | batch:       191 of       222 |       loss: 0.289486
+Training Epoch 2  86.5% | batch:       192 of       222 |       loss: 0.0863979
+Training Epoch 2  86.9% | batch:       193 of       222 |       loss: 0.0817644
+Training Epoch 2  87.4% | batch:       194 of       222 |       loss: 0.110187
+Training Epoch 2  87.8% | batch:       195 of       222 |       loss: 0.224867
+Training Epoch 2  88.3% | batch:       196 of       222 |       loss: 0.412424
+Training Epoch 2  88.7% | batch:       197 of       222 |       loss: 0.0113324
+Training Epoch 2  89.2% | batch:       198 of       222 |       loss: 0.0520729
+Training Epoch 2  89.6% | batch:       199 of       222 |       loss: 0.142671
+Training Epoch 2  90.1% | batch:       200 of       222 |       loss: 0.0792079
+Training Epoch 2  90.5% | batch:       201 of       222 |       loss: 0.14271
+Training Epoch 2  91.0% | batch:       202 of       222 |       loss: 0.199944
+Training Epoch 2  91.4% | batch:       203 of       222 |       loss: 0.0528654
+Training Epoch 2  91.9% | batch:       204 of       222 |       loss: 0.163409
+Training Epoch 2  92.3% | batch:       205 of       222 |       loss: 0.0706699
+Training Epoch 2  92.8% | batch:       206 of       222 |       loss: 0.0878401
+Training Epoch 2  93.2% | batch:       207 of       222 |       loss: 0.0551375
+Training Epoch 2  93.7% | batch:       208 of       222 |       loss: 0.635208
+Training Epoch 2  94.1% | batch:       209 of       222 |       loss: 0.111424
+Training Epoch 2  94.6% | batch:       210 of       222 |       loss: 0.0506677
+Training Epoch 2  95.0% | batch:       211 of       222 |       loss: 0.129037
+Training Epoch 2  95.5% | batch:       212 of       222 |       loss: 0.175112
+Training Epoch 2  95.9% | batch:       213 of       222 |       loss: 0.0682709
+Training Epoch 2  96.4% | batch:       214 of       222 |       loss: 0.0690306
+Training Epoch 2  96.8% | batch:       215 of       222 |       loss: 0.106418
+Training Epoch 2  97.3% | batch:       216 of       222 |       loss: 0.0898463
+Training Epoch 2  97.7% | batch:       217 of       222 |       loss: 0.0570362
+Training Epoch 2  98.2% | batch:       218 of       222 |       loss: 0.0595231
+Training Epoch 2  98.6% | batch:       219 of       222 |       loss: 0.127478
+Training Epoch 2  99.1% | batch:       220 of       222 |       loss: 0.0587102
+Training Epoch 2  99.5% | batch:       221 of       222 |       loss: 0.369215
+
+2025-08-14 22:44:52,774 | INFO : Epoch 2 Training Summary: epoch: 2.000000 | loss: 0.121771 |
+2025-08-14 22:44:52,774 | INFO : Epoch runtime: 0.0 hours, 9.0 minutes, 30.38539147377014 seconds
+
+2025-08-14 22:44:52,774 | INFO : Avg epoch train. time: 0.0 hours, 9.0 minutes, 39.76466083526611 seconds
+2025-08-14 22:44:52,774 | INFO : Avg batch train. time: 2.6115525262849824 seconds
+2025-08-14 22:44:52,774 | INFO : Avg sample train. time: 0.08179523995982874 seconds
+2025-08-14 22:44:52,774 | INFO : Evaluating on validation set ...
+Evaluating Epoch 2   0.0% | batch:         0 of        56       |       loss: 0.0177037
+Evaluating Epoch 2   1.8% | batch:         1 of        56       |       loss: 0.0107529
+Evaluating Epoch 2   3.6% | batch:         2 of        56       |       loss: 0.115334
+Evaluating Epoch 2   5.4% | batch:         3 of        56       |       loss: 0.00751969
+Evaluating Epoch 2   7.1% | batch:         4 of        56       |       loss: 0.0129924
+Evaluating Epoch 2   8.9% | batch:         5 of        56       |       loss: 0.0135214
+Evaluating Epoch 2  10.7% | batch:         6 of        56       |       loss: 0.0234138
+Evaluating Epoch 2  12.5% | batch:         7 of        56       |       loss: 0.0118203
+Evaluating Epoch 2  14.3% | batch:         8 of        56       |       loss: 0.00677871
+Evaluating Epoch 2  16.1% | batch:         9 of        56       |       loss: 0.057407
+Evaluating Epoch 2  17.9% | batch:        10 of        56       |       loss: 0.00733983
+Evaluating Epoch 2  19.6% | batch:        11 of        56       |       loss: 0.00715984
+Evaluating Epoch 2  21.4% | batch:        12 of        56       |       loss: 0.011772
+Evaluating Epoch 2  23.2% | batch:        13 of        56       |       loss: 0.0529583
+Evaluating Epoch 2  25.0% | batch:        14 of        56       |       loss: 0.022333
+Evaluating Epoch 2  26.8% | batch:        15 of        56       |       loss: 0.0151521
+Evaluating Epoch 2  28.6% | batch:        16 of        56       |       loss: 0.107326
+Evaluating Epoch 2  30.4% | batch:        17 of        56       |       loss: 0.00832678
+Evaluating Epoch 2  32.1% | batch:        18 of        56       |       loss: 0.00531659
+Evaluating Epoch 2  33.9% | batch:        19 of        56       |       loss: 0.0116087
+Evaluating Epoch 2  35.7% | batch:        20 of        56       |       loss: 0.00896197
+Evaluating Epoch 2  37.5% | batch:        21 of        56       |       loss: 0.0190544
+Evaluating Epoch 2  39.3% | batch:        22 of        56       |       loss: 0.231535
+Evaluating Epoch 2  41.1% | batch:        23 of        56       |       loss: 0.378166
+Evaluating Epoch 2  42.9% | batch:        24 of        56       |       loss: 0.00253658
+Evaluating Epoch 2  44.6% | batch:        25 of        56       |       loss: 0.00844911
+Evaluating Epoch 2  46.4% | batch:        26 of        56       |       loss: 0.0394354
+Evaluating Epoch 2  48.2% | batch:        27 of        56       |       loss: 0.0233218
+Evaluating Epoch 2  50.0% | batch:        28 of        56       |       loss: 0.0746015
+Evaluating Epoch 2  51.8% | batch:        29 of        56       |       loss: 0.157546
+Evaluating Epoch 2  53.6% | batch:        30 of        56       |       loss: 0.00934077
+Evaluating Epoch 2  55.4% | batch:        31 of        56       |       loss: 0.0167886
+Evaluating Epoch 2  57.1% | batch:        32 of        56       |       loss: 0.0339791
+Evaluating Epoch 2  58.9% | batch:        33 of        56       |       loss: 0.00640903
+Evaluating Epoch 2  60.7% | batch:        34 of        56       |       loss: 0.00757284
+Evaluating Epoch 2  62.5% | batch:        35 of        56       |       loss: 0.477379
+Evaluating Epoch 2  64.3% | batch:        36 of        56       |       loss: 0.0432091
+Evaluating Epoch 2  66.1% | batch:        37 of        56       |       loss: 0.0559796
+Evaluating Epoch 2  67.9% | batch:        38 of        56       |       loss: 0.0367988
+Evaluating Epoch 2  69.6% | batch:        39 of        56       |       loss: 0.0755764
+Evaluating Epoch 2  71.4% | batch:        40 of        56       |       loss: 0.0281038
+Evaluating Epoch 2  73.2% | batch:        41 of        56       |       loss: 0.00309653
+Evaluating Epoch 2  75.0% | batch:        42 of        56       |       loss: 0.0125958
+Evaluating Epoch 2  76.8% | batch:        43 of        56       |       loss: 0.00861774
+Evaluating Epoch 2  78.6% | batch:        44 of        56       |       loss: 0.00645182
+Evaluating Epoch 2  80.4% | batch:        45 of        56       |       loss: 0.00410588
+Evaluating Epoch 2  82.1% | batch:        46 of        56       |       loss: 0.71781
+Evaluating Epoch 2  83.9% | batch:        47 of        56       |       loss: 0.0105379
+Evaluating Epoch 2  85.7% | batch:        48 of        56       |       loss: 0.00496273
+Evaluating Epoch 2  87.5% | batch:        49 of        56       |       loss: 0.0242043
+Evaluating Epoch 2  89.3% | batch:        50 of        56       |       loss: 0.0065513
+Evaluating Epoch 2  91.1% | batch:        51 of        56       |       loss: 0.0169662
+Evaluating Epoch 2  92.9% | batch:        52 of        56       |       loss: 0.00739212
+Evaluating Epoch 2  94.6% | batch:        53 of        56       |       loss: 0.020141
+Evaluating Epoch 2  96.4% | batch:        54 of        56       |       loss: 0.00761534
+Evaluating Epoch 2  98.2% | batch:        55 of        56       |       loss: 0.00480146
+2025-08-14 22:45:18,986 | INFO : Validation runtime: 0.0 hours, 0.0 minutes, 26.210776805877686 seconds
+
+2025-08-14 22:45:18,987 | INFO : Avg val. time: 0.0 hours, 0.0 minutes, 31.547488927841187 seconds
+2025-08-14 22:45:18,987 | INFO : Avg batch val. time: 0.5633480165685926 seconds
+2025-08-14 22:45:18,987 | INFO : Avg sample val. time: 0.017803323322709473 seconds
+
+2025-08-14 22:45:18,988 | INFO : Epoch 2 Validation Summary: epoch: 2.000000 | loss: 0.056237 |
+Training Epoch:   1%|██▌                                                                                                                                                                                                                                                                | 2/200 [20:18<33:23:29, 607.12s/it]Training Epoch 3   0.0% | batch:         0 of       222  |       loss: 0.0897237
+Training Epoch 3   0.5% | batch:         1 of       222 |       loss: 0.094208
+Training Epoch 3   0.9% | batch:         2 of       222 |       loss: 0.0443435
+Training Epoch 3   1.4% | batch:         3 of       222 |       loss: 0.0689132
+Training Epoch 3   1.8% | batch:         4 of       222 |       loss: 0.175502
+Training Epoch 3   2.3% | batch:         5 of       222 |       loss: 0.0468604
+Training Epoch 3   2.7% | batch:         6 of       222 |       loss: 0.15139
+Training Epoch 3   3.2% | batch:         7 of       222 |       loss: 0.200704
+Training Epoch 3   3.6% | batch:         8 of       222 |       loss: 0.026199
+Training Epoch 3   4.1% | batch:         9 of       222 |       loss: 0.0570959
+Training Epoch 3   4.5% | batch:        10 of       222 |       loss: 0.0205302
+Training Epoch 3   5.0% | batch:        11 of       222 |       loss: 0.148849
+Training Epoch 3   5.4% | batch:        12 of       222 |       loss: 0.0846889
+Training Epoch 3   5.9% | batch:        13 of       222 |       loss: 0.0407375
+Training Epoch 3   6.3% | batch:        14 of       222 |       loss: 0.218218
+Training Epoch 3   6.8% | batch:        15 of       222 |       loss: 0.131489
+Training Epoch 3   7.2% | batch:        16 of       222 |       loss: 0.166784
+Training Epoch 3   7.7% | batch:        17 of       222 |       loss: 0.0679877
+Training Epoch 3   8.1% | batch:        18 of       222 |       loss: 0.132368
+Training Epoch 3   8.6% | batch:        19 of       222 |       loss: 0.0671055
+Training Epoch 3   9.0% | batch:        20 of       222 |       loss: 0.0883037
+Training Epoch 3   9.5% | batch:        21 of       222 |       loss: 0.0311627
+Training Epoch 3   9.9% | batch:        22 of       222 |       loss: 0.0324828
+Training Epoch 3  10.4% | batch:        23 of       222 |       loss: 0.391345
+Training Epoch 3  10.8% | batch:        24 of       222 |       loss: 0.0814542
+Training Epoch 3  11.3% | batch:        25 of       222 |       loss: 0.0812261
+Training Epoch 3  11.7% | batch:        26 of       222 |       loss: 0.100824
+Training Epoch 3  12.2% | batch:        27 of       222 |       loss: 0.161608
+Training Epoch 3  12.6% | batch:        28 of       222 |       loss: 0.0690647
+Training Epoch 3  13.1% | batch:        29 of       222 |       loss: 0.0486271
+Training Epoch 3  13.5% | batch:        30 of       222 |       loss: 0.140578
+Training Epoch 3  14.0% | batch:        31 of       222 |       loss: 0.0304383
+Training Epoch 3  14.4% | batch:        32 of       222 |       loss: 0.128308
+Training Epoch 3  14.9% | batch:        33 of       222 |       loss: 0.078463
+Training Epoch 3  15.3% | batch:        34 of       222 |       loss: 0.112394
+Training Epoch 3  15.8% | batch:        35 of       222 |       loss: 0.0653468
+Training Epoch 3  16.2% | batch:        36 of       222 |       loss: 0.342995
+Training Epoch 3  16.7% | batch:        37 of       222 |       loss: 0.958457
+Training Epoch 3  17.1% | batch:        38 of       222 |       loss: 0.133832
+Training Epoch 3  17.6% | batch:        39 of       222 |       loss: 0.0518984
+Training Epoch 3  18.0% | batch:        40 of       222 |       loss: 0.164882
+Training Epoch 3  18.5% | batch:        41 of       222 |       loss: 0.0542476
+Training Epoch 3  18.9% | batch:        42 of       222 |       loss: 0.0835724
+Training Epoch 3  19.4% | batch:        43 of       222 |       loss: 0.0707575
+Training Epoch 3  19.8% | batch:        44 of       222 |       loss: 0.261194
+Training Epoch 3  20.3% | batch:        45 of       222 |       loss: 0.0499859
+Training Epoch 3  20.7% | batch:        46 of       222 |       loss: 0.0689545
+Training Epoch 3  21.2% | batch:        47 of       222 |       loss: 0.0263969
+Training Epoch 3  21.6% | batch:        48 of       222 |       loss: 0.06121
+Training Epoch 3  22.1% | batch:        49 of       222 |       loss: 0.116787
+Training Epoch 3  22.5% | batch:        50 of       222 |       loss: 0.0523427
+Training Epoch 3  23.0% | batch:        51 of       222 |       loss: 0.307621
+Training Epoch 3  23.4% | batch:        52 of       222 |       loss: 0.0499669
+Training Epoch 3  23.9% | batch:        53 of       222 |       loss: 0.229691
+Training Epoch 3  24.3% | batch:        54 of       222 |       loss: 0.0914456
+Training Epoch 3  24.8% | batch:        55 of       222 |       loss: 0.0642203
+Training Epoch 3  25.2% | batch:        56 of       222 |       loss: 0.280834
+Training Epoch 3  25.7% | batch:        57 of       222 |       loss: 0.0908795
+Training Epoch 3  26.1% | batch:        58 of       222 |       loss: 0.0964165
+Training Epoch 3  26.6% | batch:        59 of       222 |       loss: 0.0579964
+Training Epoch 3  27.0% | batch:        60 of       222 |       loss: 0.0992576
+Training Epoch 3  27.5% | batch:        61 of       222 |       loss: 0.073159
+Training Epoch 3  27.9% | batch:        62 of       222 |       loss: 0.0505988
+Training Epoch 3  28.4% | batch:        63 of       222 |       loss: 0.175962
+Training Epoch 3  28.8% | batch:        64 of       222 |       loss: 0.0209916
+Training Epoch 3  29.3% | batch:        65 of       222 |       loss: 0.0609787
+Training Epoch 3  29.7% | batch:        66 of       222 |       loss: 0.147555
+Training Epoch 3  30.2% | batch:        67 of       222 |       loss: 0.0962076
+Training Epoch 3  30.6% | batch:        68 of       222 |       loss: 0.128669
+Training Epoch 3  31.1% | batch:        69 of       222 |       loss: 0.113489
+Training Epoch 3  31.5% | batch:        70 of       222 |       loss: 0.27458
+Training Epoch 3  32.0% | batch:        71 of       222 |       loss: 0.148476
+Training Epoch 3  32.4% | batch:        72 of       222 |       loss: 0.0804366
+Training Epoch 3  32.9% | batch:        73 of       222 |       loss: 0.0943321
+Training Epoch 3  33.3% | batch:        74 of       222 |       loss: 0.0939148
+Training Epoch 3  33.8% | batch:        75 of       222 |       loss: 0.0810653
+Training Epoch 3  34.2% | batch:        76 of       222 |       loss: 0.0702959
+Training Epoch 3  34.7% | batch:        77 of       222 |       loss: 0.0953063
+Training Epoch 3  35.1% | batch:        78 of       222 |       loss: 0.0494975
+Training Epoch 3  35.6% | batch:        79 of       222 |       loss: 0.0682517
+Training Epoch 3  36.0% | batch:        80 of       222 |       loss: 0.1419
+Training Epoch 3  36.5% | batch:        81 of       222 |       loss: 0.207598
+Training Epoch 3  36.9% | batch:        82 of       222 |       loss: 0.0404457
+Training Epoch 3  37.4% | batch:        83 of       222 |       loss: 0.170687
+Training Epoch 3  37.8% | batch:        84 of       222 |       loss: 0.0897898
+Training Epoch 3  38.3% | batch:        85 of       222 |       loss: 0.105017
+Training Epoch 3  38.7% | batch:        86 of       222 |       loss: 0.0433952
+Training Epoch 3  39.2% | batch:        87 of       222 |       loss: 0.0931199
+Training Epoch 3  39.6% | batch:        88 of       222 |       loss: 0.0943195
+Training Epoch 3  40.1% | batch:        89 of       222 |       loss: 0.185949
+Training Epoch 3  40.5% | batch:        90 of       222 |       loss: 0.0327299
+Training Epoch 3  41.0% | batch:        91 of       222 |       loss: 0.155012
+Training Epoch 3  41.4% | batch:        92 of       222 |       loss: 0.132981
+Training Epoch 3  41.9% | batch:        93 of       222 |       loss: 0.145047
+Training Epoch 3  42.3% | batch:        94 of       222 |       loss: 0.151277
+Training Epoch 3  42.8% | batch:        95 of       222 |       loss: 0.130221
+Training Epoch 3  43.2% | batch:        96 of       222 |       loss: 0.0875476
+Training Epoch 3  43.7% | batch:        97 of       222 |       loss: 0.0819586
+Training Epoch 3  44.1% | batch:        98 of       222 |       loss: 0.123702
+Training Epoch 3  44.6% | batch:        99 of       222 |       loss: 0.231021
+Training Epoch 3  45.0% | batch:       100 of       222 |       loss: 0.111746
+Training Epoch 3  45.5% | batch:       101 of       222 |       loss: 0.0952752
+Training Epoch 3  45.9% | batch:       102 of       222 |       loss: 0.0866541
+Training Epoch 3  46.4% | batch:       103 of       222 |       loss: 0.0537801
+Training Epoch 3  46.8% | batch:       104 of       222 |       loss: 0.0797998
+Training Epoch 3  47.3% | batch:       105 of       222 |       loss: 0.066661
+Training Epoch 3  47.7% | batch:       106 of       222 |       loss: 0.0565453
+Training Epoch 3  48.2% | batch:       107 of       222 |       loss: 0.223892
+Training Epoch 3  48.6% | batch:       108 of       222 |       loss: 0.121411
+Training Epoch 3  49.1% | batch:       109 of       222 |       loss: 0.0264054
+Training Epoch 3  49.5% | batch:       110 of       222 |       loss: 0.0217277
+Training Epoch 3  50.0% | batch:       111 of       222 |       loss: 0.175151
+Training Epoch 3  50.5% | batch:       112 of       222 |       loss: 0.0780339
+Training Epoch 3  50.9% | batch:       113 of       222 |       loss: 0.0868805
+Training Epoch 3  51.4% | batch:       114 of       222 |       loss: 0.171252
+Training Epoch 3  51.8% | batch:       115 of       222 |       loss: 0.0367989
+Training Epoch 3  52.3% | batch:       116 of       222 |       loss: 0.0468567
+Training Epoch 3  52.7% | batch:       117 of       222 |       loss: 0.0220787
+Training Epoch 3  53.2% | batch:       118 of       222 |       loss: 0.133712
+Training Epoch 3  53.6% | batch:       119 of       222 |       loss: 0.0652078
+Training Epoch 3  54.1% | batch:       120 of       222 |       loss: 0.0460311
+Training Epoch 3  54.5% | batch:       121 of       222 |       loss: 0.135645
+Training Epoch 3  55.0% | batch:       122 of       222 |       loss: 0.0537468
+Training Epoch 3  55.4% | batch:       123 of       222 |       loss: 0.0543875
+Training Epoch 3  55.9% | batch:       124 of       222 |       loss: 0.180436
+Training Epoch 3  56.3% | batch:       125 of       222 |       loss: 0.149925
+Training Epoch 3  56.8% | batch:       126 of       222 |       loss: 0.0698228
+Training Epoch 3  57.2% | batch:       127 of       222 |       loss: 0.193851
+Training Epoch 3  57.7% | batch:       128 of       222 |       loss: 0.0683768
+Training Epoch 3  58.1% | batch:       129 of       222 |       loss: 0.0946191
+Training Epoch 3  58.6% | batch:       130 of       222 |       loss: 0.141098
+Training Epoch 3  59.0% | batch:       131 of       222 |       loss: 0.0385835
+Training Epoch 3  59.5% | batch:       132 of       222 |       loss: 0.164673
+Training Epoch 3  59.9% | batch:       133 of       222 |       loss: 0.114236
+Training Epoch 3  60.4% | batch:       134 of       222 |       loss: 0.0764459
+Training Epoch 3  60.8% | batch:       135 of       222 |       loss: 0.110099
+Training Epoch 3  61.3% | batch:       136 of       222 |       loss: 0.0573666
+Training Epoch 3  61.7% | batch:       137 of       222 |       loss: 0.0454548
+Training Epoch 3  62.2% | batch:       138 of       222 |       loss: 0.0646274
+Training Epoch 3  62.6% | batch:       139 of       222 |       loss: 0.129025
+Training Epoch 3  63.1% | batch:       140 of       222 |       loss: 0.0610875
+Training Epoch 3  63.5% | batch:       141 of       222 |       loss: 0.0328489
+Training Epoch 3  64.0% | batch:       142 of       222 |       loss: 0.0448881
+Training Epoch 3  64.4% | batch:       143 of       222 |       loss: 0.0253977
+Training Epoch 3  64.9% | batch:       144 of       222 |       loss: 0.245124
+Training Epoch 3  65.3% | batch:       145 of       222 |       loss: 0.0416546
+Training Epoch 3  65.8% | batch:       146 of       222 |       loss: 0.0927114
+Training Epoch 3  66.2% | batch:       147 of       222 |       loss: 0.012507
+Training Epoch 3  66.7% | batch:       148 of       222 |       loss: 0.054051
+Training Epoch 3  67.1% | batch:       149 of       222 |       loss: 0.0276579
+Training Epoch 3  67.6% | batch:       150 of       222 |       loss: 0.0739405
+Training Epoch 3  68.0% | batch:       151 of       222 |       loss: 0.12185
+Training Epoch 3  68.5% | batch:       152 of       222 |       loss: 0.119029
+Training Epoch 3  68.9% | batch:       153 of       222 |       loss: 0.053802
+Training Epoch 3  69.4% | batch:       154 of       222 |       loss: 0.0318806
+Training Epoch 3  69.8% | batch:       155 of       222 |       loss: 0.0349326
+Training Epoch 3  70.3% | batch:       156 of       222 |       loss: 0.0266634
+Training Epoch 3  70.7% | batch:       157 of       222 |       loss: 0.0618592
+Training Epoch 3  71.2% | batch:       158 of       222 |       loss: 0.0896032
+Training Epoch 3  71.6% | batch:       159 of       222 |       loss: 0.0696513
+Training Epoch 3  72.1% | batch:       160 of       222 |       loss: 0.0218349
+Training Epoch 3  72.5% | batch:       161 of       222 |       loss: 0.0289563
+Training Epoch 3  73.0% | batch:       162 of       222 |       loss: 0.0882057
+Training Epoch 3  73.4% | batch:       163 of       222 |       loss: 0.0456613
+Training Epoch 3  73.9% | batch:       164 of       222 |       loss: 0.0449991
+Training Epoch 3  74.3% | batch:       165 of       222 |       loss: 0.0839767
+Training Epoch 3  74.8% | batch:       166 of       222 |       loss: 0.150804
+Training Epoch 3  75.2% | batch:       167 of       222 |       loss: 0.163797
+Training Epoch 3  75.7% | batch:       168 of       222 |       loss: 0.115474
+Training Epoch 3  76.1% | batch:       169 of       222 |       loss: 0.113434
+Training Epoch 3  76.6% | batch:       170 of       222 |       loss: 0.0372089
+Training Epoch 3  77.0% | batch:       171 of       222 |       loss: 0.174236
+Training Epoch 3  77.5% | batch:       172 of       222 |       loss: 0.0920259
+Training Epoch 3  77.9% | batch:       173 of       222 |       loss: 0.123105
+Training Epoch 3  78.4% | batch:       174 of       222 |       loss: 0.217242
+Training Epoch 3  78.8% | batch:       175 of       222 |       loss: 0.167214
+Training Epoch 3  79.3% | batch:       176 of       222 |       loss: 0.436123
+Training Epoch 3  79.7% | batch:       177 of       222 |       loss: 0.271181
+Training Epoch 3  80.2% | batch:       178 of       222 |       loss: 0.0936198

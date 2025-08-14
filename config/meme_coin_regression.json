@@ -1,0 +1,22 @@
+{
+  "data_class": "meme_coin",
+  "data_dir": "data_enriched",
+  "output_type": "last_step",
+  "max_seq_len": 128,
+  "prediction_window": 3,
+  "target": "close",
+  "norm_type": "standardization",
+  "d_model": 256,  
+  "n_heads": 4,   
+  "num_layers": 4, 
+  "dim_feedforward": 1024, 
+  "dropout": 0.2,  
+  "pos_encoding": "learnable",
+  "batch_size": 32, 
+  "epochs": 200,
+  "optimizer": "RAdam",
+  "grad_clip": 1.0,
+  "patience": 20,
+  "weight_decay": 0.01 ,
+  "lr": 0.00001
+}
